@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="index.js"></script>
+    <title>Authentication</title><script src="https://kit.fontawesome.com/6961642eda.js" crossorigin="anonymous"></script>
+</head>
+<body onload='insert()'>
+    <nav>
+        <header>
+          <a href="">
+            <img src="" alt="logo-image">
+            <h1>Computer World</h1>
+          </a>  
+        </header>
+        <div class="nav-links-cont">
+            <ul class="nav-links">
+                <a href=""><li>Machines brought in for Repair <i class="fa-regular fa-angles-right"></i></li></a>
+            </ul>
+        </div>
+    </nav>
+    <section>
+        <h1>Entry Form</h1>
+        <div id="search-div">
+        <input type="search" name="machine-search" id="search-bar" placeholder="Live searching...">
+        <button type="button" onclick="search()">Lookup Entry</button>
+        </div>
+        <div id="add-entry-form">
+                <button type="button" onclick="create()" > Create</button> 
+                 <div id="msg"></div>
+        <div id="form-div">
+            
+                <form action="" method="post" id='entry-form' >
+                    <div>
+                        <button type="button" onclick='closeForm()'>Close</button>
+                    </div>
+                    
+                    
+                   
+                    <label for="id"></label><input type="number" name='id' id='numb'>
+                    <label for="job" >Job No:</label><input type="num" name='job' id='job'placeholder="job..."><br> 
+                    <label for="client-name">Client Name:</label><input type="text" name='client-name' id='client-name' placeholder="client's full name...">
+                    <label for="gender">Gender:</label><br>
+                    <label for ='gender'>Male</label><input type="radio" name='gender' id='gender' value='Male'><br>
+                    <label for="gender">Female</label><input type="radio" name='gender' id='gender' value="Female"><br>
+                    <label for="contact-num">Contact Number:</label><input type="tel" name='tel' id='contact-num'placeholder="Mobile number..">
+                    <label for="email">E-mail:</label><input type="email" name='email' id='email'placeholder="johnbanda@gmail.com">
+                    <label for="mac-des">Machine Description:</label><input type="text" name='mac-des' id='mac-des'placeholder="machine model...">
+                    <label for="fault-description">Fault Description:</label><input type="text" name='fault-des' id='fault-des'placeholder="fault description...">
+                    <label for="init-damage">Initial Damages:</label><input type="text" name='init- damages' id='init-damages'placeholder="Initial damages...">
+                    <label for="acc">Accessories:</label><br> 
+                    <label for="acc">Power-Cable</label><input type="checkbox" name="acc" value='Power-Cable'id="checkbox"><br>
+                    <label for="acc">Printer-Cable</label><input type="checkbox" name="acc" value='Printer-Cable'id="checkbox"><br>
+                    <label for="acc">Cartridges</label><input type="checkbox" name="acc"value='Cartridges' id="checkbox"><br>
+                    <label for="acc">Power-Adaptor</label><input type="checkbox" name="acc" value ='Power-Adaptor'id="checkbox"><br>
+                    <label for="acc">Other</label><input 
+                    type="checkbox" name="acc" value='Other'id="checkbox"><br>
+                    <label for="date-in">Date:</label><input type="date" name='date-in' id='date-in'>
+                    <label for="time-in">Time:</label><input type="time" name='time-in' id='time-in'>
+                    <label for="del-by">Delievered by:</label><input type="text" name='del-by' id='del-by'placeholder="deliverer's name...">
+                    <label for="rec-by">Received by:</label><input type="text" name='rec-by' id='rec-by'placeholder="Receiver's name...">
+                    <label for="status-drop">Status:</label><select name="status-drop" id="status-drop">
+                        <option value=""></option>
+                        <option value="warranty">warranty</option>
+                        <option value="AMC">AMC</option>
+                        <option value="Chargeable Repair">Chargeable Repair</option>
+                    </select>
+            
+                    <label for="sn">Serial Number:</label><input type="text" name='sn' id='sn'placeholder="Serial number">
+                    <label for="cp">Current Progress:</label><select name="cp" id="cp">
+                        <option value=""></option>
+                        <option value="Pending Review">Pending Review</option>
+                        <option value="Complete">Complete Assessment</option>
+                    </select>
+                        
+                    <button id='submit-btn'type='button'   onclick='createNewClient()'>Create Entry</button>
+                     
+                </form>
+                
+            </div>
+            
+        </div>
+        <form action="" method="post" id='updateform' >
+            <div>
+                <button type="button" onclick='closeForm()'>Close</button>
+            </div>
+            
+            
+           
+            <label for="id">id</label><input type="number" name='id' id='unumb'>
+            <label for="job" >Job No:</label><input type="num" name='job' id='ujob'placeholder="job...">
+            <label for="client-name">Client Name:</label><input type="text" name='client-name' id='uclient-name' placeholder="client's full name...">
+            <label for="ugender">Gender:</label>
+            <label for ='gender'>Male</label><input type="radio" name='gender' id='ugender' value='Male'>
+            
+            <label for="gender">Female</label><input type="radio" name='ugender' id='ugender' value="Female">
+            <label for="contact-num">Contact Number:</label><input type="tel" name='tel' id='ucontact-num'placeholder="Mobile number..">
+            <label for="email">E-mail:</label><input type="email" name='email' id='uemail'placeholder="johnbanda@gmail.com">
+            <label for="mac-des">Machine Description:</label><input type="text" name='mac-des' id='umac-des'placeholder="machine model...">
+            <label for="fault-description">Fault Description:</label><input type="text" name='fault-des' id='ufault-des'placeholder="fault description...">
+            <label for="init-damage">Initial Damages:</label><input type="text" name='init- damages' id='uinit-damages'placeholder="Initial damages...">
+            <label for="acc">Accessories:</label><label for="acc">Power-Cable</label><input type="checkbox" name="acc" value='Power-Cable'id="ucheckbox"><br>
+            <label for="acc">Printer-Cable</label><input type="checkbox" name="acc" value='Printer-Cable'id="ucheckbox"><br>
+            <label for="acc">Cartridges</label><input type="checkbox" name="acc"value='Cartridges' id="ucheckbox"><br>
+            <label for="acc">Power-Adaptor</label><input type="checkbox" name="acc" value ='Power-Adaptor'id="ucheckbox"><br>
+            <label for="acc">Other</label><input 
+            type="ucheckbox" name="acc" value='Other'id="ucheckbox"><br>
+            <label for="date-in">Date:</label><input type="date" name='date-in' id='udate-in'>
+            <label for="time-in">Time:</label><input type="time" name='time-in' id='utime-in'>
+            <label for="date-out">Date collected:</label><input type="text" name='udate-out' id='date-out'>
+            
+            <label for="del-by">Delievered by:</label><input type="text" name='del-by' id='udel-by'placeholder="deliverer's name...">
+            <label for="rec-by">Received by:</label><input type="text" name='rec-by' id='urec-by'placeholder="Receiver's name...">
+            <label for="status-drop">Status:</label><select name="status-drop" id="ustatus-drop">
+                <option value=""></option>
+                <option value="warranty">warranty</option>
+                <option value="AMC">AMC</option>
+                <option value="Chargeable Repair">Chargeable Repair</option>
+            </select>
+    
+            <label for="sn">Serial Number:</label><input type="text" name='sn' id='usn'placeholder="Serial number">
+            <label for="cp">Current Progress:</label><select name="cp" id="cp">
+                <option value=""></option>
+                <option value="Pending Review">Pending Review</option>
+                <option value="Complete">Complete Assessment</option>
+            </select>
+                
+            <button id='submit-btn'type='button'   onclick='update()'>Update Entry</button>
+             
+        </form>
+    </section>
+    <section id="machine-info-sect">
+        <div id="entrylistdiv">
+            <h1>Machines brought in</h1>
+            <table id="machine-table">
+                <thead>
+                    <tr>
+                        <td>Id</td>
+                        <td>Job Card No</td>
+                        <td>Client Name</td>
+                        <td>Gender</td>
+                        <td>Contact Number</td>
+                        <td>Email</td>
+                        <td>Machine Description</td>
+                        <td>Fault Description</td>
+                        <td>Initial Damages</td>
+                        <td>Accessories received</td>
+                        <td>Date Received</td>
+                        <td>Time</td>
+                        <td>Delievered by</td>
+                        <td>Received by</td>
+                        <td>Status</td>
+                        <td>Serial Number</td>
+                        <td>Current Work Progress</td>
+                        <td>Actions</td>
+                    </tr>
+                </thead>
+                <tbody id="t-body">
+
+                </tbody>
+            </table>
+        </div>
+    </section>
+</body>
+</html>
